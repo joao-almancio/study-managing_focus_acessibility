@@ -240,11 +240,11 @@ a.is-active {
   color: #fff;
 }
 
-div[data-page] {
+div[data-page-content] {
   display: none !important;
 }
 
-div[data-page].is-active {
+div[data-page-content].is-active {
   display: flex !important;
   flex-direction: column;
   flex: 1;

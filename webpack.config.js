@@ -1,8 +1,9 @@
 const path = require('path');
+var webpack = require("webpack");
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: [path.resolve(__dirname, 'src/index.js')],
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -23,8 +24,16 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        exclude: /node_modules/
       }
     ]
-  }
+  },
+
+  // plugins: [
+	// 	new webpack.DllPlugin({
+	// 		path: path.join(__dirname, "dist", "[name]-manifest.json"),
+  //     name: "[name]_[fullhash]",
+	// 	})
+	// ]
 }
